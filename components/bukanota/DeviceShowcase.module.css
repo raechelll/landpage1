@@ -1,0 +1,83 @@
+.section { padding:0 0 76px; background:var(--surface); }
+.container { width:min(1120px,calc(100% - 96px)); margin-inline:auto; }
+.stage { position:relative; height:clamp(380px,46vw,530px); isolation:isolate; }
+.stage > figure { position:absolute; margin:0; }
+.stage img { object-fit:cover; }
+.laptopLid, .tabletBody, .phoneBody, .posHead { transition:box-shadow .3s ease,border-color .3s ease,filter .3s ease; }
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
+ .laptop:hover .laptopLid, .tablet:hover .tabletBody, .phone:hover .phoneBody, .pos:hover .posHead { border-color:var(--accent); filter:brightness(1.06); box-shadow:0 18px 35px #126c9c38; }
+}
+.laptop { left:16%; top:8%; width:62%; z-index:1; }
+.laptopLid { position:relative; padding:15px 10px 11px; border:1px solid #607184; border-radius:17px 17px 5px 5px; background:#172536; box-shadow:0 16px 30px #09203924; }
+.camera { position:absolute; width:4px; height:4px; border-radius:50%; background:#73879b; top:5px; left:calc(50% - 2px); }
+.laptopScreen { position:relative; aspect-ratio:1400/788; overflow:hidden; border-radius:4px; background:#fff; }
+.laptopBase { position:relative; height:19px; width:114%; left:-7%; border-radius:2px 2px 48% 48%; background:linear-gradient(#dbe2ea 0%,#b6c1ce 45%,#7e90a4 100%); border:1px solid #8c9bad; box-shadow:0 13px 19px #09203920; }
+.laptopBase > span { position:absolute; left:40%; top:0; width:20%; height:6px; border-radius:0 0 6px 6px; background:#8494a6; }
+.tablet { left:0; top:45%; width:31%; z-index:3; }
+.tabletBody { position:relative; background:#1b2a3c; padding:12px 15px; border:1px solid #738397; border-radius:19px; box-shadow:0 17px 30px #09203930; }
+.tabletScreen { position:relative; aspect-ratio:4/3; border-radius:7px; overflow:hidden; background:#fff; }
+.tabletScreen img { object-position:left top; }
+.tabletCamera { position:absolute; left:5px; top:calc(50% - 2px); width:4px; height:4px; border-radius:50%; background:#6a7d93; }
+.phone { left:27%; top:43%; width:12%; z-index:4; }
+.phoneBody { padding:5px; border:1px solid #607388; border-radius:22px; background:#122133; box-shadow:0 16px 27px #09203930; }
+.phoneScreen { position:relative; aspect-ratio:9/19; overflow:hidden; border-radius:17px; background:#f4f8fd; color:#193650; }
+.phoneSpeaker { position:absolute; width:35%; height:6px; left:32.5%; top:0; border-radius:0 0 6px 6px; background:#122133; }
+.mobileBrand { padding:14% 8% 8%; background:#fff; border-bottom:1px solid #dce6ef; }
+.mobileBrand img { display:block; width:78%; height:auto; }
+.mobileContent { padding:8%; }
+.mobileGreeting { display:block; font-size:clamp(4px,.7vw,8px); font-weight:650; margin-bottom:8%; }
+.mobileMetric { display:grid; gap:3px; padding:10%; border-radius:6px; background:#fff; box-shadow:0 1px 3px #1737530d; }
+.mobileMetric > span:first-child { color:#607b93; font-size:clamp(4px,.55vw,6px); }
+.mobileMetric strong { font-family:var(--font-body),Arial,sans-serif; font-size:clamp(6px,.8vw,10px); font-weight:700; white-space:nowrap; }
+.mobileMetric .mobileTrend { font-size:5px; color:#248569; }
+.mobileChart { display:flex; align-items:flex-end; gap:5%; height:34px; margin:12% 0; padding:3px 5% 0; border-bottom:1px solid #cddfed; }
+.mobileChart i { width:8%; background:#398fe6; border-radius:2px 2px 0 0; }
+.mobileChart i:nth-child(even) { background:#9acdf8; }
+.mobileRow { display:flex; justify-content:space-between; align-items:center; padding:7% 0; border-bottom:1px solid #e0e9f3; font-size:clamp(4px,.5vw,6px); }
+.mobileRow b { font-size:inherit; }
+.mobileStatus { width:5px; height:5px; border-radius:50%; background:#45b48c; }
+.phoneHome { position:absolute; bottom:3%; left:34%; width:32%; height:3px; background:#9eafbf; border-radius:999px; }
+.pos { left:72%; top:31%; width:28%; z-index:2; }
+.posHead { position:relative; padding:12px 9px 15px; border:1px solid #73859b; border-radius:12px; background:#172536; box-shadow:0 12px 22px #09203924; transform:perspective(900px) rotateY(-9deg); z-index:2; }
+.posScreen { position:relative; aspect-ratio:16/10; overflow:hidden; border-radius:4px; background:#fff; }
+.posLight { position:absolute; width:3px; height:3px; background:#6cadd3; border-radius:50%; bottom:6px; right:12px; }
+.posStand { position:relative; height:72px; width:29%; margin:-3px auto 0; background:linear-gradient(90deg,#334960,#1b3046 50%,#40566d); clip-path:polygon(25% 0,75% 0,100% 100%,0 100%); z-index:1; }
+.posBase { position:relative; width:72%; height:16px; margin:-3px auto 0; background:linear-gradient(#60748a,#233c55); border:1px solid #61768c; border-radius:50% 50% 5px 5px; box-shadow:0 12px 17px #0920392a; z-index:2; }
+.srOnly { position:absolute; width:1px; height:1px; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+@media(max-width:1000px) {
+ .container { width:calc(100% - 64px); }
+ .stage { height:415px; }
+ .laptop { top:14%; }
+ .phone { top:46%; }
+ .tablet { top:48%; }
+ .pos { top:37%; }
+ .posStand { height:60px; }
+}
+@media(max-width:700px) {
+ .section { padding:0 0 48px; }
+ .container { width:calc(100% - 40px); }
+ .stage { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:end; gap:28px 23px; height:auto; padding:10px 5px 28px; }
+ .stage > figure { position:relative; left:auto; top:auto; width:100%; }
+ .laptop { align-self:center; }
+ .laptopLid { padding:9px 5px 6px; border-radius:8px 8px 3px 3px; }
+ .camera { top:3px; width:3px; height:3px; }
+ .laptopBase { height:10px; }
+ .laptopBase > span { height:3px; }
+ .tablet { align-self:center; }
+ .tabletBody { padding:8px 10px; border-radius:12px; }
+ .tabletCamera { width:3px; height:3px; left:4px; }
+ .tabletScreen { border-radius:4px; }
+ .stage > .phone { width:55%; justify-self:center; align-self:center; }
+ .phoneBody { padding:4px; border-radius:16px; }
+ .phoneScreen { border-radius:12px; }
+ .mobileGreeting { font-size:5px; }
+ .mobileMetric > span:first-child { font-size:4px; }
+ .mobileMetric strong { font-size:7px; }
+ .mobileChart { height:25px; }
+ .mobileRow { font-size:4px; }
+ .phoneHome { height:2px; }
+ .posHead { padding:8px 6px 10px; border-radius:8px; }
+ .posLight { bottom:4px; }
+ .posStand { height:47px; }
+ .posBase { height:11px; }
+}

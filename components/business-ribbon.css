@@ -1,0 +1,20 @@
+#solusi.business-ribbon { position:relative; padding:36px 0; scroll-margin-top:calc(var(--landing-header-height,88px) - 110px); background: var(--surface); }
+.business-ribbon-layout { display:grid; grid-template-columns:155px minmax(0,1fr); align-items:center; gap:24px; padding-bottom:30px; border-bottom:1px solid var(--border-main); }
+.business-ribbon h2 { color:var(--text-main); font-family:var(--font-body),Arial,sans-serif; font-size:16.8255px; font-weight:500; line-height:1.7; letter-spacing:0; margin:0; }
+.business-ribbon-window { overflow:hidden; min-width:0; }
+.business-ribbon-window:focus-visible { outline:2px solid #225d94; outline-offset:6px; }
+.business-ribbon-track { display:flex; width:max-content; animation:business-ribbon-travel 42s linear infinite; }
+.business-ribbon-group { display:flex; gap:20px; padding-right:20px; }
+.business-ribbon-item { margin:0; width:190px; flex:0 0 190px; }
+.business-ribbon-photo { position:relative; height:128px; overflow:hidden; border-radius:5px; background:var(--surface-soft); }
+.business-ribbon-photo img { object-fit:cover; }
+.business-ribbon-photo img { transition:transform .6s cubic-bezier(.22,1,.36,1); }
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
+ .business-ribbon-window:hover .business-ribbon-track { animation-play-state:paused; }
+ .business-ribbon-item:hover img { transform:scale(1.065); }
+}
+.business-ribbon-item figcaption { color:var(--text-secondary); font-size:14.0213px; font-weight:500; line-height:1.6; margin-top:11px; }
+.business-ribbon-window:focus-visible .business-ribbon-track { animation-play-state:paused; }
+@keyframes business-ribbon-travel { to { transform:translateX(-50%); } }
+@media(max-width:700px) { #solusi.business-ribbon { padding:28px 0; } .business-ribbon-layout { grid-template-columns:1fr; gap:20px; padding-bottom:24px; } .business-ribbon h2 { font-size:15.7739px; } .business-ribbon h2 br { display:none; } .business-ribbon-item { width:155px; flex-basis:155px; } .business-ribbon-photo { height:105px; } .business-ribbon-group { gap:15px; padding-right:15px; } .business-ribbon-track { animation-duration:36s; } .business-ribbon-item figcaption { font-size:14.0213px; } }
+@media(prefers-reduced-motion:reduce) { .business-ribbon-track { animation:none; } .business-ribbon-group[aria-hidden="true"] { display:none; } .business-ribbon-window { overflow-x:auto; scrollbar-width:thin; padding-bottom:8px; } }

@@ -1,0 +1,246 @@
+.payment-section {
+  padding: 88px 0;
+  border-top: 1px solid #edf0f3;
+  border-bottom: 1px solid #edf0f3;
+  background: #fafbfd;
+  scroll-margin-top: 105px;
+}
+
+.payment-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.payment-eyebrow {
+  display: block;
+  margin-bottom: 17px;
+  color: #637a8f;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.payment-intro h2 {
+  max-width: 440px;
+  margin: 0;
+  color: #18252f;
+  font-size: clamp(29px, 3.2vw, 40px);
+  font-weight: 600;
+  letter-spacing: -1.5px;
+  line-height: 1.28;
+}
+
+.payment-note-composition {
+  position: relative;
+  width: 270px;
+  height: 133px;
+  margin-top: 30px;
+}
+
+.payment-note {
+  position: absolute;
+  width: 115px;
+  height: 117px;
+  padding: 16px 14px;
+  border: 1px solid #d8e2eb;
+  border-radius: 3px;
+  background: white;
+}
+
+.payment-note-back {
+  top: 5px;
+  left: 12px;
+  background: #edf2f7;
+  transform: rotate(-7deg);
+}
+
+.payment-note-back > span {
+  display: block;
+  height: 2px;
+  margin-top: 13px;
+  background: #c8d5e1;
+}
+
+.payment-note-front {
+  z-index: 1;
+  left: 27px;
+  top: 0;
+  transform: rotate(4deg);
+}
+
+.payment-note-heading {
+  display: block;
+  margin-bottom: 15px;
+  color: #4c667d;
+  font-size: 7px;
+  font-weight: 600;
+}
+
+.payment-note-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 9px 0;
+}
+
+.payment-note-row > i {
+  width: 42px;
+  height: 2px;
+  background: #d2dde7;
+}
+
+.payment-note-row > b {
+  width: 14px;
+  height: 3px;
+  background: #90abc5;
+}
+
+.payment-note-row:nth-of-type(3) > i {
+  width: 29px;
+}
+.payment-note-total {
+  display: block;
+  margin-top: 12px;
+  padding-top: 7px;
+  border-top: 1px dashed #d5e0e9;
+  color: #59768f;
+  font-size: 6px;
+}
+
+.payment-note-connector {
+  position: absolute;
+  top: 59px;
+  left: 149px;
+  width: 31px;
+  height: 1px;
+  background: #b9cbdc;
+}
+
+.payment-note-connector::after {
+  position: absolute;
+  top: -2px;
+  right: 0;
+  width: 4px;
+  height: 4px;
+  border-top: 1px solid #96afc6;
+  border-right: 1px solid #96afc6;
+  transform: rotate(45deg);
+  content: "";
+}
+
+.payment-note-seal {
+  position: absolute;
+  top: 35px;
+  left: 192px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #617b91;
+  font-size: 7px;
+  line-height: 1.6;
+}
+
+.payment-note-seal > i {
+  width: 13px;
+  height: 7px;
+  margin-left: 1px;
+  border-left: 1.5px solid #66839d;
+  border-bottom: 1.5px solid #66839d;
+  transform: rotate(-45deg);
+}
+
+.payment-capabilities {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #dfe6ec;
+}
+
+.payment-capabilities > li {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  padding: 26px 0;
+  border-bottom: 1px solid #dfe6ec;
+}
+
+.payment-capability-mark {
+  flex: 0 0 9px;
+  height: 1px;
+  margin-top: 12px;
+  background: #8ba1b5;
+}
+
+.payment-capabilities h3 {
+  margin: 0 0 7px;
+  color: #243b50;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  line-height: 1.5;
+}
+
+.payment-capabilities p {
+  max-width: 350px;
+  margin: 0;
+  color: #63717e;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .payment-layout {
+    gap: 50px;
+  }
+  .payment-intro h2 {
+    font-size: 32px;
+  }
+  .payment-capabilities > li {
+    gap: 15px;
+    padding: 23px 0;
+  }
+  .payment-capabilities h3 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .payment-section {
+    padding: 61px 0;
+  }
+  .payment-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .payment-eyebrow {
+    margin-bottom: 13px;
+    font-size: 11px;
+  }
+  .payment-intro h2 {
+    max-width: 350px;
+    font-size: 30px;
+    letter-spacing: -1.1px;
+  }
+  .payment-note-composition {
+    margin-top: 24px;
+    height: 126px;
+  }
+  .payment-capabilities > li {
+    padding: 21px 0;
+    gap: 19px;
+  }
+  .payment-capabilities h3 {
+    font-size: 15px;
+  }
+  .payment-capabilities p {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .payment-section {
+    scroll-behavior: auto;
+  }
+}

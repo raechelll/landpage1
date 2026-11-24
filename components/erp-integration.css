@@ -1,0 +1,79 @@
+.erp-integration { background:#f6f8fa; padding:60px 0 45px; color:#173b58; }
+.erp-network-intro { text-align:center; margin-bottom:32px; }
+.erp-network-intro h2 { font-size:clamp(30px,3.4vw,44px); font-weight:600; letter-spacing:-1.4px; line-height:1.25; }
+.erp-network-intro p { margin-top:15px; color:#607789; font-size:16px; }
+.erp-network { max-width:1040px; margin:auto; }
+.erp-network-lane { --erp-gap:26px; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:var(--erp-gap); list-style:none; padding:0; margin:0; }
+.erp-network-lane > li { position:relative; min-width:0; }
+.erp-network-node { position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; gap:10px; width:100%; padding:6px 0 12px; border:0; background:transparent; color:#365b78; }
+.erp-network-icon { display:grid; place-items:center; width:50px; height:50px; border:1px solid #cbdce9; border-radius:50%; background:#f6f8fa; transition:background-color 250ms,color 250ms,border-color 250ms; }
+.erp-network-node strong { font-family:var(--font-heading),Arial,sans-serif; font-size:18px; font-weight:600; line-height:1.45; transition:color 250ms; }
+.erp-network-node small { font-size:13px; line-height:1.65; color:#708799; }
+.erp-network-node[data-active="true"] .erp-network-icon { background:#225d94; color:white; border-color:#225d94; }
+.erp-network-node[data-active="true"] strong { color:#225d94; }
+
+/* Edges stop eight pixels before the icon boundary, never behind its artwork. */
+.erp-network-link { position:absolute; z-index:0; display:block; left:calc(50% + 33px); top:31px; width:calc(100% + var(--erp-gap) - 66px); height:1.5px; background:#b8cddd; color:#9ab5c9; pointer-events:none; }
+.erp-network-link::after, .erp-network-link[data-two-way="true"]::before { content:""; position:absolute; width:5px; height:5px; top:-2px; right:0; border-top:1.5px solid currentColor; border-right:1.5px solid currentColor; transform:rotate(45deg); }
+.erp-network-link[data-two-way="true"]::before { right:auto; left:0; transform:rotate(-135deg); }
+.erp-network-signal { position:absolute; inset:0; background:#225d94; transform:scaleX(0); transform-origin:left center; }
+.erp-network-lane > li[data-complete="true"] .erp-network-signal { transform:scaleX(1); transition:transform 900ms ease; }
+.erp-network-lane > li[data-complete="true"] .erp-network-link { color:#225d94; }
+.erp-network-bridge { display:flex; align-items:center; justify-content:center; gap:20px; max-width:670px; margin:15px auto 17px; color:#7890a2; font-size:13px; }
+.erp-network-bridge::before,.erp-network-bridge::after { content:""; height:1px; background:#dbe5ed; flex:1; }
+.erp-network-finance { grid-template-columns:repeat(3,minmax(0,1fr)); max-width:760px; margin-inline:auto; }
+.erp-network-footer { max-width:980px; margin:23px auto 0; padding-top:17px; border-top:1px solid #dce6ee; }
+.erp-network-detail { margin:0; font-size:15px; line-height:1.8; color:#5f798d; min-height:54px; animation:erp-detail-fade 250ms ease-out; }
+.erp-network-detail strong { color:#365c78; font-weight:500; margin-right:4px; }
+@keyframes erp-detail-fade { from {opacity:.3} to {opacity:1} }
+@media(max-width:900px) { .erp-network-lane { --erp-gap:17px; } .erp-network-node strong {font-size:16px;} }
+@media(max-width:600px) {
+ .erp-integration { padding:44px 0 33px; }
+ .erp-network-intro { text-align:left; margin-bottom:27px; }
+ .erp-network-intro h2 { font-size:30px; letter-spacing:-1px; }
+ .erp-network-intro p { line-height:1.7; }
+ .erp-network-lane,.erp-network-finance { --erp-gap:18px; display:flex; flex-direction:column; gap:var(--erp-gap); max-width:none; width:100%; margin:0; }
+ .erp-network-node { display:grid; grid-template-columns:45px 1fr; grid-template-rows:auto auto; align-content:center; align-items:center; gap:2px 15px; text-align:left; padding:0; min-height:64px; }
+ .erp-network-icon { width:45px; height:45px; grid-row:1/3; }
+ .erp-network-node strong { font-size:16px; }
+ .erp-network-node small { font-size:13px; }
+ .erp-network-link { left:22px; top:calc(50% + 30.5px); width:1.5px; height:calc(100% + var(--erp-gap) - 61px); }
+ .erp-network-link::after { top:auto; right:-2px; bottom:0; transform:rotate(135deg); }
+ .erp-network-link[data-two-way="true"]::before { left:-2px; top:0; transform:rotate(-45deg); }
+ .erp-network-signal { transform:scaleY(0); transform-origin:top center; }
+ .erp-network-lane > li[data-complete="true"] .erp-network-signal { transform:scaleY(1); }
+ .erp-network-bridge { margin:24px 0; }
+ .erp-network-footer { margin-top:22px; }
+ .erp-network-detail { font-size:14px; min-height:76px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .erp-network-detail { animation:none; }
+ .erp-network-icon,.erp-network-node strong,.erp-network-lane > li[data-complete="true"] .erp-network-signal { transition:none; }
+}
+
+/* A single moving pulse makes the flow visible without turning it into controls. */
+.erp-network-node { cursor: default; }
+.erp-network-icon { position: relative; }
+.erp-network-node[data-active="true"] .erp-network-icon::after {
+ content: ""; position: absolute; inset: -6px; border: 1px solid #689bc4; border-radius: 50%;
+ animation: erp-active-pulse 1650ms ease-out infinite;
+}
+.erp-travel-dot { position: absolute; top: -2.5px; left: 0; width: 7px; height: 7px;
+ border-radius: 50%; background: #225d94; opacity: 0; }
+.erp-network-lane > li[data-current="true"] .erp-travel-dot {
+ animation: erp-travel-x 1650ms ease-in-out infinite;
+}
+.erp-integration[data-cycling="false"] .erp-travel-dot,
+.erp-integration[data-cycling="false"] .erp-network-icon::after { animation-play-state: paused; }
+@keyframes erp-travel-x { 0% {left:0;opacity:0} 12%{opacity:1} 85%{opacity:1} 100%{left:calc(100% - 7px);opacity:0} }
+@keyframes erp-travel-y { 0% {top:0;opacity:0} 12%{opacity:1} 85%{opacity:1} 100%{top:calc(100% - 7px);opacity:0} }
+@keyframes erp-active-pulse { from {transform:scale(.9);opacity:.75} to {transform:scale(1.25);opacity:0} }
+@media(max-width:600px) {
+ .erp-travel-dot { left:-2.5px; top:0; }
+ .erp-network-lane > li[data-current="true"] .erp-travel-dot { animation-name: erp-travel-y; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .erp-network-node[data-active="true"] .erp-network-icon::after,
+ .erp-network-lane > li[data-current="true"] .erp-travel-dot { animation: none; }
+ .erp-travel-dot { display: none; }
+}

@@ -1,0 +1,18 @@
+.logistics-product-visual {
+  margin: 0; min-width: 0; padding: 26px 0 15px;
+  border-radius: 12px; background: #173b58; color: #fff;
+  box-shadow: 0 22px 45px #173b5814; overflow: hidden;
+}
+.logistics-visual-title { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 0 25px 25px; }
+.logistics-visual-title > span:first-child { font-family: var(--font-heading), sans-serif; font-size: 22px; line-height: 1.35; letter-spacing: -.65px; }
+.logistics-visual-title > span:last-child { font-size: 12px; color: #c1d6e6; white-space: nowrap; }
+.logistics-visual-screen { display: block; margin: 0 16px; background: white; border-radius: 5px; overflow: hidden; border: 1px solid #ffffff25; }
+.logistics-visual-screen img { display: block; width: 100%; height: auto; }
+.logistics-visual-flow { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); list-style: none; padding: 20px 25px; margin: 0; gap: 12px; }
+.logistics-visual-flow li { display: flex; align-items: center; justify-content: space-between; gap: 7px; font-size: 13px; color: #e5eff5; }
+.logistics-visual-flow svg { flex-shrink: 0; color: #a0c0d7; }
+.logistics-product-visual figcaption { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 25px 0; margin: 0; border-top: 1px solid #ffffff24; font-size: 12px; color: #b8cfe0; line-height: 1.6; }
+.logistics-product-visual figcaption a { min-height: 36px; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; color: #fff; }
+@media(max-width:1050px) { .logistics-visual-title { flex-direction: column; gap: 7px; } }
+@media(max-width:700px) { .logistics-product-visual { padding-top: 22px; } .logistics-visual-title { padding: 0 20px 20px; } .logistics-visual-title > span:first-child { font-size: 24px; } .logistics-visual-flow { padding: 18px 16px; gap: 8px; } .logistics-visual-flow li { font-size: 12px; } .logistics-product-visual figcaption { padding-inline: 16px; } .logistics-visual-screen { margin-inline: 10px; } }
+@media(max-width:370px) { .logistics-visual-flow li { font-size: 11px; } .logistics-visual-flow svg { width: 10px; } .logistics-product-visual figcaption { font-size: 11px; } }

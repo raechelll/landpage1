@@ -1,0 +1,236 @@
+.corporate-footer {
+  padding-top: 62px;
+  border-top: 1px solid #e8edf2;
+  background: #f8fafc;
+  color: #627380;
+}
+
+.corporate-footer-main {
+  display: grid;
+  grid-template-columns: 1.45fr 0.9fr 1fr;
+  gap: 72px;
+  padding-bottom: 51px;
+}
+
+.corporate-footer-identity,
+.corporate-footer-nav {
+  min-width: 0;
+}
+
+.corporate-footer-brand {
+  display: inline-flex;
+  vertical-align: top;
+}
+
+.corporate-footer-brand img {
+  display: block;
+  width: 152px;
+  height: auto;
+}
+
+.corporate-footer-identity p {
+  max-width: 280px;
+  margin: 21px 0 18px;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.corporate-footer-company {
+  display: block;
+  color: #365065;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.corporate-footer-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.corporate-footer-nav h2 {
+  margin: 0 0 6px;
+  color: #263e51;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.15px;
+  line-height: 1.7;
+}
+
+.corporate-footer a {
+  border-radius: 2px;
+}
+
+.corporate-footer-nav a,
+.corporate-footer-bottom a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 100%;
+  font-size: 14px;
+  line-height: 1.7;
+  transition: color 180ms ease;
+}
+
+.corporate-footer-nav a:hover,
+.corporate-footer-bottom a:hover {
+  color: #115fae;
+}
+
+.corporate-footer-contact p {
+  max-width: 230px;
+  margin: -1px 0 1px;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.corporate-footer-arrow {
+  flex-shrink: 0;
+  color: #7491a8;
+}
+
+.corporate-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 23px 0 25px;
+  border-top: 1px solid #e2e9ef;
+}
+
+.corporate-footer-bottom small {
+  color: #7c8b97;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.corporate-footer-bottom nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 27px;
+}
+
+.corporate-footer-bottom a {
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .corporate-footer-main {
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    gap: 35px;
+  }
+
+  .corporate-footer-bottom {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .corporate-footer {
+    padding-top: 44px;
+  }
+
+  .corporate-footer-main {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 35px 25px;
+    padding-bottom: 37px;
+  }
+
+  .corporate-footer-identity {
+    grid-column: 1 / -1;
+  }
+
+  .corporate-footer-identity p {
+    max-width: 310px;
+    margin: 18px 0 13px;
+    font-size: 14px;
+  }
+
+  .corporate-footer-nav {
+    gap: 13px;
+  }
+
+  .corporate-footer-nav h2 {
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+
+  .corporate-footer-nav a,
+  .corporate-footer-contact p {
+    font-size: 14px;
+  }
+
+  .corporate-footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+    padding: 21px 0 24px;
+  }
+
+  .corporate-footer-bottom nav {
+    gap: 12px 23px;
+  }
+}
+
+@media (max-width: 370px) {
+  .corporate-footer-main {
+    column-gap: 19px;
+  }
+
+  .corporate-footer-nav a {
+    gap: 5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .corporate-footer a {
+    transition: none;
+  }
+}
+.corporate-footer-main {
+  grid-template-columns: 1.3fr 0.85fr 0.85fr 1fr;
+  gap: 38px;
+}
+.corporate-footer-identity p {
+  font-size: 15px;
+}
+.corporate-footer-nav a {
+  font-size: 14px;
+  min-height: 27px;
+}
+.corporate-footer-nav h2 {
+  font-size: 15px;
+}
+.corporate-footer-company {
+  font-size: 14px;
+}
+@media (max-width: 900px) {
+  .corporate-footer-main {
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 32px;
+  }
+  .corporate-footer-identity {
+    grid-column: 1/-1;
+  }
+  .corporate-footer-identity p {
+    max-width: 48ch;
+  }
+}
+@media (max-width: 640px) {
+  .corporate-footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+  }
+  .corporate-footer-contact {
+    grid-column: 1/-1;
+  }
+  .corporate-footer-nav a {
+    font-size: 14px;
+    min-height: 30px;
+  }
+  .corporate-footer-identity p {
+    font-size: 15px;
+  }
+}

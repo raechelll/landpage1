@@ -1,0 +1,85 @@
+:root {
+  color-scheme: light;
+  --surface: #fff;
+  --surface-soft: #eff5ff;
+  --surface-hover: #e5f4f3;
+  --surface-accent: #effaf8;
+  --accent: #087e89;
+  --action-fill: linear-gradient(110deg, #235bcb, #087f8c);
+  --action-shadow: 0 8px 22px #126c9c30;
+  --surface-overlay: #fffffff2;
+  --text-main: #172e49;
+  --text-secondary: #526a81;
+  --text-tertiary: #657c91;
+  --border-main: #dce6f0;
+  --link: #1764ca;
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --surface: #111d2b;
+  --surface-soft: #172c44;
+  --surface-hover: #1d424b;
+  --surface-accent: #123338;
+  --accent: #67dfd3;
+  --action-shadow: 0 8px 24px #0005;
+  --surface-overlay: #172638f2;
+  --text-main: #edf4fc;
+  --text-secondary: #c1d0e0;
+  --text-tertiary: #a0b5ca;
+  --border-main: #30445a;
+  --link: #8dc1ff;
+  --ink: #edf4fc;
+  --muted: #b4c6d8;
+  --line: #30445a;
+  --blue-pale: #172638;
+}
+body { background: var(--surface); }
+.site-header .nav-link { position: relative; transition: color .2s ease; }
+.site-header .navigation > .nav-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: -7px; height: 2px; border-radius: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+.site-header .navigation > .nav-link:is(:hover,:focus-visible)::after { transform: scaleX(1); }
+.site-header:not(.is-over-hero) .navigation > .nav-link:is(:hover,:focus-visible) { color: var(--accent); }
+.site-header .header-actions .button-primary { background: var(--action-fill); box-shadow: var(--action-shadow); transition: transform .25s ease, box-shadow .25s ease; }
+.site-header .header-actions .button-primary svg { transition: transform .25s ease; }
+.language-control, .theme-control { transition: background .2s ease, border-color .2s ease, transform .25s ease; }
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
+  .site-header .header-actions .button-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 27px #126c9c40; }
+  .site-header .header-actions .button-primary:hover svg { transform: translate(2px,-2px); }
+  .display-controls button:hover { transform: translateY(-2px); border-color: var(--accent); }
+}
+.display-controls { display: flex; align-items: center; gap: 7px; flex-shrink: 0; }
+.language-control { display: grid; place-items: center; min-width: 41px; height: 35px; padding: 0 9px; border: 1px solid var(--border-main); border-radius: 999px; background: var(--surface-soft); color: var(--text-main); font-size: .8125rem; font-weight: 700; line-height: 1; }
+.language-control:hover { background: var(--surface-hover); }
+.theme-control { display: grid; place-items: center; width: 35px; height: 35px; padding: 0; border: 1px solid var(--border-main); border-radius: 50%; background: var(--surface-soft); color: var(--text-main); }
+.theme-control:hover { background: var(--surface-hover); }
+.display-controls button:focus-visible { outline: 2px solid #79b8fc; outline-offset: 3px; }
+.site-header .header-actions { gap: 12px; }
+.site-header.is-over-hero .language-control,
+.site-header.is-over-hero .theme-control { background: #0c294a65; border-color: #ffffff70; color: #fff; }
+html[data-theme="dark"] .site-header:not(.is-over-hero) { background: #111d2b; border-color: var(--border-main); box-shadow: 0 5px 20px #0002; }
+html[data-theme="dark"] .site-header:not(.is-over-hero) :is(.nav-link, .menu-trigger, .mobile-menu-button) { color: var(--text-secondary); }
+html[data-theme="dark"] :is(.product-dropdown.product-mega-menu, .product-mega-menu .mega-product-tile) { background: var(--surface); border-color: var(--border-main); }
+html[data-theme="dark"] .product-mega-menu .mega-product-tile > strong { color: var(--text-main); }
+html[data-theme="dark"] .product-mega-menu .mega-product-tile:hover { background: var(--surface-hover); }
+html[data-theme="dark"] .product-group-title { color: var(--text-tertiary); }
+html[data-theme="dark"] .product-link-group + .product-link-group { border-color: var(--border-main); background: var(--surface-soft); }
+a[data-brand] { position: relative; display: inline-flex; width: max-content; max-width: 100%; line-height: 0; vertical-align: middle; }
+a[data-brand] > img { display: block; }
+html[data-theme="dark"] a[data-brand]::after,
+.site-header.is-over-hero a[data-brand]::after {
+  content: ""; position: absolute; inset: 0; background: #f0f6ff;
+  mask: url("/bukanota-brand.png") center / contain no-repeat;
+  clip-path: inset(0 0 0 24%); pointer-events: none;
+}
+@media (max-width: 1100px) {
+  .site-header .navigation { gap: 15px; }
+  .site-header .header-inner { gap: 18px; }
+  .site-header .header-actions { gap: 9px; }
+}
+@media (max-width: 900px) { .site-header .header-actions > .button { display: none; } }
+@media (max-width: 700px) {
+  .site-header .header-actions { margin-left: auto; }
+  .site-header .header-inner { gap: 12px; }
+  html[data-theme="dark"] .site-header .navigation { background: var(--surface); border-color: var(--border-main); }
+  html[data-theme="dark"] .site-header .navigation .nav-link { color: var(--text-secondary); }
+  .display-controls { gap: 5px; }
+}

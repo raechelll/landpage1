@@ -1,0 +1,35 @@
+.workspace-hero { position:relative; isolation:isolate; background:#102d43; color:#fff; min-height:580px; min-height:clamp(540px,72svh,760px); padding:0; display:flex; align-items:flex-end; }
+.workspace-hero-background { object-fit:cover; object-position:center 52%; z-index:-2; }
+.workspace-hero-shade { position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,#082439a8 0%,#08243965 65%,#08243955 100%),linear-gradient(0deg,#061c34eb 0%,#09283966 58%,#09283933 100%); }
+.workspace-hero-grid { display:block; padding-block:100px 58px; }
+.workspace-hero-copy { max-width:780px; }
+.workspace-hero h1 { color:#fff; font-size:clamp(46.2702px,5.6786vw,75.7149px); font-weight:600; letter-spacing:-2px; line-height:1.08; margin:0; }
+.workspace-hero-description { color:#e4edf5; max-width:55ch; font-size:16.8255px; line-height:1.85; margin:25px 0 0; }
+.workspace-hero-actions { display:flex; align-items:center; flex-wrap:wrap; gap:14px; margin-top:31px; }
+.workspace-hero-actions .button { background:#245bdd; color:#fff; border-radius:30px; min-height:49px; padding:14px 24px; font-size:14.7224px; box-shadow:none; gap:25px; }
+.workspace-hero-actions .button:hover { background:#1c4ec7; }
+.workspace-feature-link { display:inline-flex; align-items:center; justify-content:center; gap:25px; border:1px solid #ffffff6b; color:#fff; border-radius:30px; min-height:49px; padding:13px 23px; font-size:14.7224px; font-weight:600; transition:background-color 180ms,border-color 180ms; }
+.workspace-feature-link:hover { background:#ffffff15; border-color:#fff; }
+#beranda .workspace-hero-actions .button { background:var(--action-fill); box-shadow:var(--action-shadow); transition:transform .25s ease,box-shadow .25s ease; }
+.workspace-hero-actions a svg { transition:transform .25s ease; }
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
+ #beranda .workspace-hero-actions .button:hover { transform:translateY(-3px); box-shadow:0 12px 28px #058d9a40; }
+ .workspace-hero-actions .button:hover svg { transform:translate(3px,-3px); }
+ .workspace-feature-link:hover svg { transform:translateY(3px); }
+}
+.workspace-feature-link:focus-visible { outline:2px solid #fff; outline-offset:5px; }
+@media(max-width:900px) { .workspace-hero { min-height:540px; } .workspace-hero-grid { padding-block:90px 46px; } .workspace-hero h1 { font-size:56.7862px; } }
+@media(max-width:700px) { .workspace-hero { min-height:560px; min-height:clamp(500px,76svh,650px); } .workspace-hero-background { object-position:60% center; } .workspace-hero-grid { padding-block:90px 40px; } .workspace-hero h1 { font-size:clamp(41.0123px,9.4644vw,56.7862px); letter-spacing:-1.4px; } .workspace-hero-description { font-size:15.7739px; max-width:40ch; margin-top:22px; } .workspace-hero-actions { gap:12px; margin-top:27px; } .workspace-hero-actions .button,.workspace-feature-link { font-size:14.0213px; padding:12px 18px; min-height:46px; gap:17px; } }
+@media(prefers-reduced-motion:reduce) { .workspace-feature-link { transition:none; } }
+
+/* Fill the initial viewport below the sticky header, without exposing the next section. */
+.workspace-hero { min-height:calc(100svh - 88px); }
+@media(max-width:900px) { .workspace-hero { min-height:calc(100svh - 76px); } }
+@media(max-width:700px) { .workspace-hero { min-height:calc(100svh - 72px); } }
+
+/* Extend the same hero photograph behind the sticky navigation. */
+.workspace-hero { margin-top:-88px; min-height:100svh; }
+.workspace-hero { align-items:center; --workspace-header:88px; overflow:clip; }
+.workspace-hero-grid { padding-block:calc(var(--workspace-header) + 36px) 36px; }
+@media(max-width:900px) { .workspace-hero { margin-top:-76px; min-height:100svh; --workspace-header:76px; } }
+@media(max-width:700px) { .workspace-hero { margin-top:-72px; min-height:100svh; --workspace-header:72px; } }

@@ -1,0 +1,25 @@
+.problems { margin-top: 44px; }
+.columnLabels { display: grid; grid-template-columns: 1fr 1fr; gap: 75px; color: var(--text-tertiary); font-size: 0.9202rem; padding-bottom: 15px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 75px; padding-block: 25px; border-top: 1px solid var(--border-main); }
+.problem, .solution { display: flex; align-items: flex-start; gap: 18px; }
+.problem > svg { color: var(--text-tertiary); margin-top: 2px; }
+.row .problem h3 { font-size: 1.1829rem; font-weight: 600; line-height: 1.6; letter-spacing: -.3px; max-width: 350px; }
+.solution > svg { color: var(--link); margin-top: 3px; }
+.solution p { font-size: 1.1252rem; color: var(--text-secondary); line-height: 1.8; }
+.solution a { display: inline-block; margin-top: 9px; color: var(--link); font-size: 0.9202rem; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #a6c4eb; }
+.solution a:hover { text-decoration-color: var(--link); }
+@media (max-width: 900px) { .columnLabels, .row { gap: 35px; } }
+@media (max-width: 700px) {
+  .problems { margin-top: 30px; }
+  .columnLabels { display: none; }
+  .row { grid-template-columns: 1fr; gap: 15px; padding-block: 24px; }
+  .problem, .solution { gap: 14px; }
+  .row .problem h3 { font-size: 1.1173rem; max-width: none; }
+  .solution { padding-left: 3px; }
+}
+.help { max-width: 760px; margin-inline: auto; text-align: center; }
+.help p { max-width: 680px; margin: 19px auto 0; color: var(--text-secondary); font-size: 1.1252rem; line-height: 1.8; }
+.contact { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 51px; margin-top: 27px; padding: 13px 24px; border-radius: 999px; background: #1764ca; color: #fff; font-size: 0.9859rem; font-weight: 600; line-height: 1.5; transition: background .2s, transform .2s; }
+.contact:hover { background: #104eaa; transform: translateY(-2px); }
+@media (max-width: 370px) { .contact { padding-inline: 17px; font-size: 0.9202rem; } }
+@media (prefers-reduced-motion: reduce) { .contact { transition: none; } .contact:hover { transform: none; } }
